@@ -1,14 +1,7 @@
 <template>
-<div class="ly_top">
+<div class="container">
   <h1>投稿アプリ</h1>
-  <dl>
-    <dt>このページについて</dt>
-    <dd>・ユーザ,投稿の作成と削除が可（変更不可）</dd>
-    <dd>・気に入った投稿に対して「お気に入り」登録・削除が可</dd>
-    <dd>・デザインは考慮していません。こんなのが作れるアピールです。</dd>
-    <dd>・vue3,firebaseで作成しました</dd>
-  </dl>
-
+  <hr>
   <user
     :users="users"
     @deleteUser="deleteUser"
@@ -181,12 +174,10 @@ export default({
 </script>
 <style lang="scss">
   h1{
-    padding:15px;
-    background-color:blue;
-    color:white;
+    margin:25px 0px;
   }
-  .ly_top_inner{
-    max-width: 1000px;
-    margin:auto;
-  }
+  // .ly_top_inner{
+  //   max-width: 1000px;
+  //   margin:auto;
+  // }
 </style>

@@ -1,21 +1,21 @@
 <template>
-  <h3>ユーザ作成</h3>
-
-  ユーザ名:<input v-model="user"><br>
-  <button @click="createUser">登録</button>
-  <p>ユーザリスト</p>
-  <table>
-    <thead>
-      <th>ユーザ名</th>
-      <th>削除</th>
-    </thead>
-    <tbody>
-      <tr v-for="user in users" :key="user">
-        <td>{{user.name}}</td>
-        <td><button @click="deleteUser(user.id)">削除</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <h3 style="margin-bottom:15px;">ユーザ作成</h3>
+  <div class="row g-3">
+    <label class="col-sm-2 col-form-label">ユーザ名</label>
+    <div class="col-auto">
+      <input type="text" v-model="user" class="form-control">
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary mb-3" @click="createUser">登録</button>
+    </div>
+  </div>
+  <div class="container row row-cols-3">
+    <template v-for="user in users" :key="user">
+      <div class="col border p-2 rounded" style="text-align:center;">{{user.name}}
+        <span class="badge bg-primary rounded-pill" style="cursor:pointer;" @click="deleteUser(user.id)">削除</span>
+      </div>
+    </template>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent,ref } from 'vue'

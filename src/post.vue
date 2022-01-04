@@ -1,13 +1,22 @@
 <template>
-  <h3>投稿作成</h3>
-  ユーザ名：
-  <select v-model="selectUser">
-    <option v-for="(user,k) in users" :key="user" :k=k :value="user">{{user.name}}</option>
-  </select>
-  <br>
-  内容:<input type="text" v-model="post"><br>
-  <button @click="createPost">投稿</button>
-
+  <h3 style="margin-bottom:15px;">投稿作成</h3>
+  <div class="row g-3">
+    <label for="staticEmail" class="col-sm-2 col-form-label">ユーザ選択</label>
+    <div class="col-auto">
+      <select class="form-select form-select-sm" style="width:200px" v-model="selectUser">
+        <option  v-for="(user,k) in users" :key="user" :k=k :value="user">{{user.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row g-3">
+    <label for="staticEmail" class="col-sm-2 col-form-label">メモ</label>
+    <div class="col-auto">
+      <input type="text" v-model="post" class="form-control" id="inputPassword2">
+    </div>
+    <div class="col-auto">
+      <button type="submit" @click="createPost" class="btn btn-primary mb-3">投稿</button>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent,ref,onMounted, computed } from 'vue'

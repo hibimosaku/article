@@ -1,8 +1,8 @@
 import { getFirestore,collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { User , Post , Favorite  } from "./model";
 
-
 export const createUserFirebase=async(name:string)=>{
+  console.log(name)
   return addDoc(collection(getFirestore(), "users"), {
     name: name,
   })
